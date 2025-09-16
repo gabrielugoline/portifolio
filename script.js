@@ -10,7 +10,10 @@ const repositories = [
     { name: "Auto-Escola-Águia", description: "Site para Auto Escola Águia", language: "CSS", stars: 45, forks: 20, updated_at: "Dec 10, 2024", url: "https://autoescola-aguia.vercel.app/" },
     { name: "Tech-Stock", description: "Plataforma de gerenciamento de Stock para empresa ti", language: "TypeScript", stars: 38, forks: 14, updated_at: "Nov 20, 2024", url: "https://tech-stock.vercel.app/" },
     { name: "Auto-Elétrica-HC", description: "Site para Auto Elétrica", language: "SCSS", stars: 55, forks: 17, updated_at: "Nov 3, 2024", url: "https://eletricahc.vercel.app/" },
-    { name: "Senhora-Empada", description: "Site para loja de Empada", language: "CSS", stars: 12, forks: 3, updated_at: "Nov 3, 2024", url: "https://senhora-empada.vercel.app/" }
+    { name: "Senhora-Empada", description: "Site para loja de Empada", language: "CSS", stars: 12, forks: 3, updated_at: "Nov 3, 2024", url: "https://senhora-empada.vercel.app/" },
+    { name: "Portal Hospital Santa Rita", description: "Portal interno para Hospital", language: "HTML", stars: 16, forks: 12, updated_at: "Set 3, 2025", url: "https://portal-hsr.vercel.app/"},
+    { name: "Escola Laura Chagas", description: "Site para escola", language: "HTML", stars: 10, forks: 1, updated_at: "Ago 12, 2025", url: "https://escola-laurachagas.vercel.app/" },
+    { name: "Move Up", description: "ERP para academias", language: "JavaScript", stars: 19, forks: 1, updated_at: "Out 1, 2025", url: "https://move-up-nu.vercel.app/" }
 ];
 
 // Mapeamento de linguagens para cores
@@ -20,6 +23,7 @@ const languageColors = {
     "SCSS": "bg-pink-500", // Cor rosa para SCSS
     "Node.js": "bg-green-500", // Cor verde para Node.js
     "TypeScript": "bg-blue-600", // Cor azul escuro para TypeScript
+    "JavaScript": "bg-yellow-600", // Cor para JavaScript
 };
 
 // Função para gerar a cor do ícone da linguagem

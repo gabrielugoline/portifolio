@@ -3,217 +3,227 @@
 <head>
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>gabrielugoline</title>
+    <title>Repositórios - gabrielugoline</title>
     <link rel="shortcut icon" href="a.png" type="image/x-icon">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+    <style>
+        /* Estilos personalizados */
+        .gradient-border {
+            position: relative;
+            border: 1px solid transparent;
+            background-clip: padding-box;
+        }
+        
+        .gradient-border::before {
+            content: '';
+            position: absolute;
+            top: -1px;
+            left: -1px;
+            right: -1px;
+            bottom: -1px;
+            background: linear-gradient(45deg, #2c3442, #12161c, #2c3442);
+            border-radius: 0.375rem;
+            z-index: -1;
+        }
+        
+        /* Estilizando a barra de rolagem */
+        #repos-list::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        #repos-list::-webkit-scrollbar-track {
+            background: #1a202c;
+            border-radius: 10px;
+        }
+        
+        #repos-list::-webkit-scrollbar-thumb {
+            background: #2d3748;
+            border-radius: 10px;
+        }
+        
+        #repos-list::-webkit-scrollbar-thumb:hover {
+            background: #4a5568;
+        }
+        
+        @media (max-width: 768px) {
+            .profile-section {
+                padding: 0 1rem;
+            }
+            
+            .repos-container {
+                margin-left: 0;
+                width: 100%;
+            }
+            
+            #search-input, #sort-select {
+                width: 100%;
+                margin-bottom: 1rem;
+            }
+            
+            .filter-container {
+                flex-direction: column;
+            }
+        }
+    </style>
 </head>
 
-<body style="background-color: #12161c;" class="text-white">
+<body style="background-color: #010409;" class="text-white min-h-screen flex flex-col">
 
-    <div class="container mx-auto p-4">
-        <header class="flex justify-between items-center mb-8">
-            <a href="index.html">
-                <h1 class="text-2xl font-bold pl-40 sm:pl-0">
-                    Gabriel<span class="text-red-700">Dev</span>
-                  </h1>
-                  
-                  
-                  
-              </a>              
-            <nav>
-                <a class="text-white px-4 py-2 rounded hover:bg-gray-700" href="index.html">Home</a>
+      <div class="container mx-auto p-4 flex-grow">
+  <header class="flex justify-between items-center mb-8">
+    <a href="index.html" class="flex items-center space-x-2 text-white hover:text-blue-500 transition-colors duration-200">
+      <i class="fab fa-github text-4xl"></i>
+      <h1 class="text-2xl font-bold">gabrielugoline</h1>
+    </a>          
+            <nav class="flex space-x-2">
+                <a class="text-white px-4 py-2 rounded-lg hover:bg-gray-800 transition-colors duration-200 bg-gray-900" href="index.html">Início</a>
+                <a class="text-white px-4 py-2 rounded-lg hover:bg-gray-800 transition-colors duration-200" href="repos.html">Repositórios</a>
             </nav>
         </header>
-        <hr class="border-t border-gray-600 mb-8">
+        
+        <hr class="border-gray-700 mb-8">
 
-        <div class="flex flex-col md:flex-row">
-            <div class="md:w-1/3 flex flex-col items-center">
-                <img alt="Profile picture of Gabriel Ugoline" class="rounded-full mb-4" height="150" src="perfil.jpeg" width="150"/>
+        <div class="flex flex-col lg:flex-row">
+            <!-- Coluna do perfil -->
+            <div class="lg:w-1/3 flex flex-col items-center profile-section mb-8 lg:mb-0 lg:pr-6">
+                <div class="relative inline-block">
+  <!-- Imagem de perfil -->
+  <img src="logo.jpg" alt="Profile picture" 
+       class="rounded-full w-72 h-72 border-2 border-gray-700">
+
+  <!-- Bolinha com emoji 🎯 -->
+  <div class="absolute top-1/2 right-[-21px] translate-y-6">
+    <div class="group relative flex items-center justify-center 
+                w-8 h-8 rounded-full border border-white bg-transparent text-white text-lg">
+      🎯
+      <!-- Tooltip -->
+      <span class="absolute left-full ml-2 top-1/2 -translate-y-1/2 
+                   whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity 
+                   bg-black text-white text-xs px-2 py-1 rounded-md">
+        Focusing
+      </span>
+    </div>
+  </div>
+</div>
                 <h2 class="text-xl font-bold">Gabriel Ugoline</h2>
-                <p class="text-gray-400">@gabrielugoline</p>
-                <a href="https://github.com/gabrielugoline" class="bg-[#1e242e] text-white hover:bg-gray-700 py-2 px-4 border border-[#30363d] rounded-md flex items-center justify-center w-32 mt-[7px]">
+                <p class="text-gray-400">gabrielugoline</p>
+                <a href="https://github.com/gabrielugoline" class="bg-gray-900 text-white hover:bg-gray-800 py-2 px-4 border border-gray-700 rounded-lg flex items-center justify-center w-32 mt-2 transition-colors duration-200">
                     Seguir
                 </a>
-                <p class="text-center mt-4">Desenvolvedor Full-Stack Júnior | Engenharia de Software</p>
-                <p class="text-center text-gray-400 mt-2">
-                    <i class="fas fa-map-marker-alt"></i>
-                    Minas Gerais - BH
+                
+                <p class="text-center mt-4 text-gray-300">Desenvolvedor Full-Stack Júnior | Engenharia de Software</p>
+                <p class="text-center text-gray-400 mt-2 flex items-center justify-center">
+                    <i class="fas fa-map-marker-alt mr-2"></i>
+                    Minas Gerais
                 </p>
-                <a class="text-blue-400 hover:text-blue-500 underline underline-offset-2 transition duration-300" href="https://www.gatedev.com.br" target="_blank" rel="noopener noreferrer">
-                    &lt;&gt; www.gatedev.com.br
-                </a>
-                
+                <p class="text-center text-gray-400 mt-2 flex items-center justify-center">
+                <a href="https://www.gatedev.com.br" target="_blank" rel="noopener noreferrer"
+                 class="flex items-center space-x-1 hover:text-blue-500 transition-colors duration-200">
+                 <i class="fas fa-globe"></i>
+                 <span>www.gatedev.com.br</span>
+                  </a>
+                  </p>
+                <p class="text-center text-gray-400 mt-2 flex items-center justify-center">
+                <a href="https://www.linkedin.com/in/gabrielugoline1" target="_blank" class="flex items-center space-x-1 hover:text-blue-500 transition-colors duration-200">
+                <i class="fab fa-linkedin"></i>
+                 <span>in/gabrielugoline1</span>
+                 </a>
+                 </p>
 
-                
-<!-- Redes Sociais -->
-<div class="mt-4 text-left ml-[-20px]">
-    <h3 class="text-lg">Redes Sociais</h3>
-    <div class="flex space-x-4 mt-2">
-        <a class="bg-[#1e242e] text-white p-3 rounded flex items-center space-x-2 transition duration-300 hover:bg-gray-700" href="mailto:gabrielugoline@gmail.com">
-            <i class="fas fa-envelope"></i>
-            <span>Email</span>
-        </a>
-        <a class="bg-[#1e242e] text-white p-3 rounded flex items-center space-x-2 transition duration-300 hover:bg-gray-700" href="https://www.instagram.com/gabrielugoline/">
-            <i class="fab fa-instagram"></i>
-            <span>Instagram</span>
-        </a>
-        <a class="bg-[#1e242e] text-white p-3 rounded flex items-center space-x-2 transition duration-300 hover:bg-gray-700" href="https://www.linkedin.com/in/gabrielugoline1">
-            <i class="fab fa-linkedin"></i>
-            <span>Linkedin</span>
-        </a>
-    </div>
-</div>
 
-<!-- Linguagens -->
-<div class="mt-4 text-left">
-    <h3 class="text-lg ml-[-50px]">Linguagens</h3>
-    <div class="grid grid-cols-3 gap-2 mt-2 ml-[-50px]">
-        <span class="bg-[#1e242e] px-1.5 py-0.5 rounded inline-flex items-center text-gray-300 text-sm">
-            <i class="devicon-html5-plain colored mr-1 text-base"></i> HTML
-        </span>
-        <span class="bg-[#1e242e] px-1.5 py-0.5 rounded inline-flex items-center text-gray-300 text-sm">
-            <i class="devicon-css3-plain colored mr-1 text-base"></i> CSS
-        </span>
-        <span class="bg-[#1e242e] px-1.5 py-0.5 rounded inline-flex items-center text-gray-300 text-sm">
-            <i class="devicon-javascript-plain colored mr-1 text-base"></i> JavaScript
-        </span>
-        <span class="bg-[#1e242e] px-1.5 py-0.5 rounded inline-flex items-center text-gray-300 text-sm">
-            <i class="devicon-typescript-plain colored mr-1 text-base"></i> TypeScript
-        </span>
-        <span class="bg-[#1e242e] px-1.5 py-0.5 rounded inline-flex items-center text-gray-300 text-sm">
-            <i class="devicon-nodejs-plain colored mr-1 text-base"></i> Node.js
-        </span>
-        <span class="bg-[#1e242e] px-1.5 py-0.5 rounded inline-flex items-center text-gray-300 text-sm">
-            <i class="devicon-php-plain colored mr-1 text-base"></i> PHP
-        </span>
-        <span class="bg-[#1e242e] px-1.5 py-0.5 rounded inline-flex items-center text-gray-300 text-sm">
-            <i class="devicon-python-plain colored mr-1 text-base"></i> Python
-        </span>
-        <span class="bg-[#1e242e] px-1.5 py-0.5 rounded inline-flex items-center text-gray-300 text-sm">
-            <i class="devicon-react-original colored mr-1 text-base"></i> React
-        </span>
-        <span class="bg-[#1e242e] px-1.5 py-0.5 rounded inline-flex items-center text-gray-300 text-sm">
-            <i class="devicon-csharp-plain colored mr-1 text-base"></i> CSharp
-        </span>
-        <span class="bg-[#1e242e] px-1.5 py-0.5 rounded inline-flex items-center text-gray-300 text-sm">
-            <i class="fas fa-database text-[#e38c00] mr-1 text-base"></i> SQL Server
-        </span>
-    </div>
-</div>
+                <!-- Redes Sociais -->
+                <div class="mt-6 w-full">
+                    <h3 class="text-lg font-semibold mb-3 text-gray-300 border-b border-gray-700 pb-2">Sociais</h3>
+                    <div class="grid grid-cols-1 gap-2">
+                        <a class="bg-gray-900 text-white p-3 rounded-lg flex items-center space-x-3 transition-colors duration-200 hover:bg-gray-800" href="mailto:gabrielugoline@gmail.com">
+                            <i class="fas fa-envelope text-blue-400"></i>
+                            <span>Email</span>
+                        </a>
+                        <a class="bg-gray-900 text-white p-3 rounded-lg flex items-center space-x-3 transition-colors duration-200 hover:bg-gray-800" href="https://www.instagram.com/gabrielugoline/">
+                            <i class="fab fa-instagram text-pink-400"></i>
+                            <span>Instagram</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Linguagens -->
+                <div class="mt-6 w-full">
+                    <h3 class="text-lg font-semibold mb-3 text-gray-300 border-b border-gray-700 pb-2">Habilidades</h3>
+                    <div class="grid grid-cols-2 gap-2">
+                        <span class="bg-gray-900 px-3 py-2 rounded-lg inline-flex items-center text-gray-300 text-sm">
+                            <i class="devicon-javascript-plain colored mr-2 text-base"></i> JavaScript
+                        </span>
+                        <span class="bg-gray-900 px-3 py-2 rounded-lg inline-flex items-center text-gray-300 text-sm">
+                            <i class="devicon-nodejs-plain colored mr-2 text-base"></i> Node.js
+                        </span>
+                        <span class="bg-gray-900 px-3 py-2 rounded-lg inline-flex items-center text-gray-300 text-sm">
+                            <i class="devicon-php-plain colored mr-2 text-base"></i> PHP
+                        </span>
+                        <span class="bg-gray-900 px-3 py-2 rounded-lg inline-flex items-center text-gray-300 text-sm">
+                            <i class="devicon-python-plain colored mr-2 text-base"></i> Python
+                        </span>
+                        <span class="bg-gray-900 px-3 py-2 rounded-lg inline-flex items-center text-gray-300 text-sm">
+                            <i class="devicon-react-original colored mr-2 text-base"></i> React
+                        </span>
+                        <span class="bg-gray-900 px-3 py-2 rounded-lg inline-flex items-center text-gray-300 text-sm">
+                            <i class="devicon-csharp-plain colored mr-2 text-base"></i> CSharp
+                        </span>
+                        <span class="bg-gray-900 px-3 py-2 rounded-lg inline-flex items-center text-gray-300 text-sm">
+                            <i class="fas fa-database text-yellow-500 mr-2 text-base"></i> SQL Server
+                        </span>
+                    </div>
+                </div>
 
                 <!-- Competências -->
-                <div class="mt-4 text-left">
-                    <h3 class="text-lg ml-[-105px]">Competências</h3>
-                    <div class="flex flex-wrap space-x-2 mt-2 ml-[-105px]">
-                        <span class="bg-[#1e242e] px-2 py-1 rounded">Front-End</span>
-                        <span class="bg-[#1e242e] px-2 py-1 rounded">Back-End</span>
-                        <span class="bg-[#1e242e] px-2 py-1 rounded">UI/UX</span>
+                <div class="mt-6 w-full">
+                    <h3 class="text-lg font-semibold mb-3 text-gray-300 border-b border-gray-700 pb-2">Competências</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-gray-900 px-3 py-1 rounded-lg text-sm">Front-End</span>
+                        <span class="bg-gray-900 px-3 py-1 rounded-lg text-sm">Back-End</span>
+                        <span class="bg-gray-900 px-3 py-1 rounded-lg text-sm">Teamwork</span>
+                        <span class="bg-gray-900 px-3 py-1 rounded-lg text-sm">Problem Solving</span>
                     </div>
                 </div>
             </div>
 
 <!-- Repositórios -->
-<div class="mt-8 ml-[160px]">
-    <header class="flex justify-between items-center mb-4">
-        <h2 class="text-2xl">Repositórios</h2>
-    </header>
+<div class="mt-8 ml-[50px]">
+  <header class="flex justify-between items-center mb-6">
+    <h2 class="text-3xl font-bold"></h2>
+  </header>
 
-<!-- Barra de pesquisa e filtros -->
-<div class="flex justify-between items-center mb-4">
-    <!-- Input oculto no mobile -->
+  <!-- Barra de pesquisa e filtros -->
+  <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-6">
+    <!-- Input de busca -->
     <input 
       type="text" 
       id="search-input" 
       placeholder="Buscar repositórios..." 
-      class="hidden md:block bg-[#1e242e] text-white px-4 py-2 rounded md:w-1/2"
+      class="bg-[#1e242e] text-white px-4 py-3 rounded-lg w-full md:w-1/2 focus:outline-none focus:ring-2 focus:ring-blue-500"
     />
-  
-    <!-- Select oculto no mobile -->
+
+    <!-- Select -->
     <select 
       id="sort-select" 
-      class="hidden md:block bg-[#1e242e] text-white px-4 py-2 rounded ml-10"
+      class="bg-[#1e242e] text-white px-4 py-3 rounded-lg w-full md:w-auto focus:outline-none focus:ring-2 focus:ring-blue-500"
     >
       <option value="name">Ordenar por Nome</option>
       <option value="date">Ordenar por Data de atualização</option>
       <option value="stars">Ordenar por Estrelas</option>
     </select>
   </div>
-  
-<style>
 
-html, body {
-    overflow-x: hidden;
-}
-
-@media (max-width: 768px) {
-    #repos-list {
-        margin-left: -160px; 
-    }
-    .text-2xl {
-        margin-left: -160px; 
-    }
-    #search-input{
-        display: block;
-    }
-    #sort-select {
-        margin-left: -100px;
-    }
-}
-
-</style>
-<!-- Lista de repositórios -->
-<div id="repos-list" class="mt-4 overflow-y-scroll max-h-[650px]">
+  <!-- Lista de repositórios -->
+  <div id="repos-list" class="grid grid-cols-1 md:grid-cols-2 gap-6 overflow-y-auto max-h-[650px] pr-2">
     <!-- Repositórios serão inseridos aqui dinamicamente via JavaScript -->
+  </div>
 </div>
 
-<style>
-    /* Estilizando a barra de rolagem */
-    #repos-list {
-        /* Garantindo que o scroll apareça */
-        overflow-y: scroll;
-        max-height: 650px;
-    }
-    
-    /* Estilos para o track (trilho) da barra de rolagem */
-    #repos-list::-webkit-scrollbar {
-        width: 8px; /* Largura da barra de rolagem */
-    }
-    
-    /* Estilos para o track (trilho) da barra de rolagem */
-    #repos-list::-webkit-scrollbar-track {
-        background: #1e242e; /* Cor de fundo do trilho */
-        border-radius: 10px; /* Borda arredondada do trilho */
-    }
-    
-    /* Estilos para o thumb (a parte que você arrasta) */
-    #repos-list::-webkit-scrollbar-thumb {
-        background: #272d35; /* Cor da parte da barra de rolagem */
-        border-radius: 10px; /* Borda arredondada do thumb */
-    }
-    
-    /* Estilos para quando a barra de rolagem é ativada */
-    #repos-list::-webkit-scrollbar-thumb:hover {
-        background: #31353b; /* Cor mais escura quando o mouse está sobre a barra */
-    }
-    </style>
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-    <script src="script.js"></script>
-    
+<script src="script.js"></script>
 </body>
 </html>
